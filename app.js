@@ -29,7 +29,8 @@ for (const name of Object.keys(nets)) {
     }
   }
 }
-console.log(results);
+const myAddress = results[Object.keys(results)[0]];
+console.log(myAddress);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -57,7 +58,7 @@ var myID = '';
 //Main routes
 app.get('/', function(req, res, next) {
   myID = getRandomInt(10000,99999);
-  res.render('index', { title: 'ACI: The Game', session: myID, address: results.Ethernet[0] });
+  res.render('index', { title: 'ACI: The Game', session: myID, address: myAddress });
 });
 
 const mongoURL = 'mongodb+srv://' + process.env.MONGO_SERVER;
