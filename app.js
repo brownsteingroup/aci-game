@@ -29,6 +29,7 @@ for (const name of Object.keys(nets)) {
     }
   }
 }
+console.log(results);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
