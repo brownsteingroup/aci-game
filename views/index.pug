@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  div(id="session")= session
+  img(id="logo", src="/images/aci-logo-white.svg")
+  div(id="intro")
+    div(class="scaler")
+      h1 ACI: THE GAME
+      div(id="qr" data-address=address)
+      p SCAN ME
+  div(id="leaderBoard")
+    p
+      span Leaderboard
+    div(id="leaderList")
+  div(id="gameplay")
+    div(id="timer") :30
+    div(id="window")
+      div(id="player", style="top: 0;" )
+        img(src="/images/sparks.svg" id="catchEffect")
+        img(src="/images/player.svg", alt="")
+      div(id="items")
+        //-div(class="item dollar")
+    div(id="progress")
+      div(class="scoreMult sm1") x2
+      div(class="scoreMult sm2") x4
+      div(class="scoreMult sm3") x6
+      div(id="progressFill", style="width: 0%")
+        div(id="fillWrap")
+          div(class="scoreMult sm1")
+            span x2
+          div(class="scoreMult sm2")
+            span x4
+          div(class="scoreMult sm3")
+            span x6
+    div(id="scoreWrap")
+      p Payments<br />Processed
+      span(id="score") 0
+  div(id="endFrame")
+    div(class="endWrap")
+      div(class="endCenter")
+        h2 Game over!
+        h3 Total Bills:
+          span(id="finalScore") 22
+  script(src="/socket.io/socket.io.js")
+  script(src="/scripts/jquery.min.js")
+  script(src="/scripts/easy.qrcode.js")
+  script(src="/scripts/gameplay.js")

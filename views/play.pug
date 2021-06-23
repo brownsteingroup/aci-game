@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div(id="play")
+    img(id="logo", src="/images/aci-logo-white.svg")
+    div(id="startScreen")
+      div(class="centerer")
+        h1 Welcome to ACI: the Game!
+        p Slide your finger up and down to move the net. Catch as many payments as you can in 30 seconds, and try to beat the high&nbsp;score!
+        button(id="start") Start
+    div(id="controlScreen")
+      div(id="upButton")
+      input(id="slideControl", type="range", min="1", max="100", value="50")
+      div(id="downButton")
+    div(id="endScreen")
+      h2 TOTAL BILLS:
+        span(id="score") 1000
+      label Join the leaderboard:
+      div(class="lbSubmit")
+        input(id="name", type="text", placeholder="YOUR NAME")
+        input(id="submit", type="submit")
+      a(class="ctaBtn", href="https://events.speedpay.com/mba-raffle-2020", target="_blank") Click Here
+      p Enter our raffle for a&nbsp;chance to win an amazing&nbsp;prize!
+    script(src="/socket.io/socket.io.js")
+    script(src="/scripts/controls.js")
